@@ -1,5 +1,5 @@
 """
-Added three more adventure levels and more than two(2) choices (fight and sweam) in 2 scinarios.
+Added three more adventure levels and more than two(2) choices (fight and sweam) in 2 scenarios.
 Improved the game flow so choosing "no" from thee start ends the adventure, while choosing "yes" continue start the story to the end point of every choises made.
 
 Author: Augustine Okpe Oche
