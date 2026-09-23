@@ -1,5 +1,5 @@
 """
-Added three more adventure levels with more than two(2) choices in 3 scinarios, allowing the player to progress through Level 5.
+Added three more adventure levels and more than two(2) choices (fight and sweam) in 2 scinarios.
 Improved the game flow so choosing "no" from thee start ends the adventure, while choosing "yes" continue start the story to the end point of every choises made.
 
 Author: Augustine Okpe Oche
@@ -28,7 +28,7 @@ if start_game == "yes":
 
     if item_choice == "match":
         print()
-        bear_choice = input("You strike the match and see a large grizzly bear. Do you want to RUN or HIDE behind a tree? ")
+        bear_choice = input("You strike the match and see a large grizzly bear. Do you want to RUN, FIGHT or HIDE behind a tree? ")
         bear_choice = bear_choice.lower()
 
         if bear_choice == "run":
@@ -36,11 +36,11 @@ if start_game == "yes":
             print("You run as fast as you can, but the bear is faster. The bear catches you. Game over.")
 
         elif bear_choice == "hide":
-            print
+            print()
             print("You hide behind a tree. The bear loses interest and walks away. You are safe for now.")
 
             # LEVEL 3
-            river_choice = input("You continue through the forest and discover a RIVER. Do you want to use the BRIDGE or the BOAT? ")
+            river_choice = input("You continue through the forest and discover a RIVER. Do you want to use the BRIDGE, SWEAM or the BOAT? ")
             river_choice = river_choice.lower()
 
             if river_choice == "bridge":
@@ -82,14 +82,19 @@ if start_game == "yes":
             elif river_choice == "boat":
                 print()
                 print("The river current becomes too strong. The boat crashes into a rock. Game over.")
+            elif river_choice == "sweam":
+                print()
+                print("You got tired and can no longer sweam. Game over")
 
             else:
                 print()
-                print("Invalid choice. Please choose BRIDGE or BOAT.")
+                print("Invalid choice. Please choose BRIDGE, SWEAM or BOAT.")
+        elif bear_choice == "fight":
+            print("The bear overpowered you. Game over")
 
         else:
             print()
-            print("Invalid choice. Please choose RUN or HIDE.")
+            print("Invalid choice. Please choose RUN, FIGHT or HIDE.")
 
     # LEVEL 2
     elif item_choice == "flashlight":
@@ -122,7 +127,7 @@ if start_game == "yes":
                     print("You follow the valley road and reach the edge of the forest.")
 
                     # LEVEL 5
-                    traveler_choice = input("You find an injured TRAVELER. Do you HELP the traveler or CONTINUE toward safety? ")
+                    traveler_choice = input("You find an injured traveler. Do you HELP the traveler or CONTINUE toward safety? ")
                     traveler_choice = traveler_choice.lower()
 
                     if traveler_choice == "help":
