@@ -1,8 +1,9 @@
-payment = -1
-while payment < 0:
-        payment = float(input("What is your payment amout? $"))
+number = 0
+while number <= 10:
+        number = float(input("What is your payment amout? $"))
+        number = number + 1
 
-print(f"Your payment amount is ${payment:.2f}")
+print(f"The loop is complete")
 
 
 
