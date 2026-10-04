@@ -1,59 +1,41 @@
+## Extra features: type "hint" to reveal the first and last letters, or "quit" to reveal the word and exit.
 print("Welcome to the word guessing game!")
 print()
 
-secret_word = "dog"
+secret_word = "mosiah"
 guess_count = 0
 guess = ""
+print("Your hint is:", " ".join(["_" for _ in range(len(secret_word))]))
 
-print(f"Your hint is: {' '.join(['_' for _ in range(len(secret_word))])}")
+while guess != secret_word:
+    guess = input("What is your guess? ").strip().lower()
 
-# take user input
+    if guess == "hint":
+        print(f"Extra hint: the word starts with '{secret_word[0]}' and ends with '{secret_word[-1]}'.")
+        continue
 
+    if guess == "quit":
+        print(f"The secret word was {secret_word}.")
+        break
 
-# keep asking until the user guesses the secret word correctly
-for len(guess) != len(secret_word):
-   # guess = input("What is your guess? ")
-    print(f"Sorry, the guess must have the same number of letters as the secret word.")
+    guess_count += 1
 
-    if len(guess) == len(secret_word):
-        print(f"Your hint is: {' '.join([letter if letter in guess else '_' for letter in secret_word])}")
-       
-    else:
+    if len(guess) != len(secret_word):
+        print("Sorry, the guess must have the same number of letters as the secret word.")
+        print()
+        continue
+
+    if guess == secret_word:
         print("Congratulations! You guessed it!")
-        
+    else:
+        hint = []
+        for index, letter in enumerate(guess):
+            if letter == secret_word[index]:
+                hint.append(letter.upper())
+            elif letter in secret_word:
+                hint.append(letter.lower())
+            else:
+                hint.append("_")
+        print("Your hint is:", " ".join(hint))
+
 print(f"It took you {guess_count} guesses.")
-
-
-
-
-# Welcome to the word guessing game!
-
-# Your hint is: _ _ _ _ _ _ 
-# What is your guess? temple
-# Your hint is: _ _ m _ _ _ 
-# What is your guess? moroni
-# Your hint is: M O _ o _ i 
-# What is your guess? hhhhhh
-# Your hint is: h h h h h H 
-# What is your guess? mosiah  
-# Congratulations! You guessed it!
-# It took you 4 guesses.
-
-# Your hint is: _ _ _ _ _ _ 
-# What is your guess? nephi
-# Sorry, the guess must have the same number of letters as the secret word.
-
-# What is your guess? a
-# Sorry, the guess must have the same number of letters as the secret word.
-
-# What is your guess? helaman
-# Sorry, the guess must have the same number of letters as the secret word.
-
-# What is your guess? abcdefghijklmnopqrstuvwxyz
-# Sorry, the guess must have the same number of letters as the secret word.
-
-# What is your guess? temple
-# Your hint is: _ _ m _ _ _ 
-# What is your guess? mosiah
-# Congratulations! You guessed it!
-# It took you 6 guesses.
