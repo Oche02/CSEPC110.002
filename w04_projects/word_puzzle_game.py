@@ -11,7 +11,9 @@ while guess != secret_word:
     guess = input("What is your guess? ").strip().lower()
 
     if guess == "hint":
-        print(f"Extra hint: the word starts with '{secret_word[0]}' and ends with '{secret_word[-1]}'.")
+        print(
+            f"Extra hint: the word starts with '{secret_word[0]}' and ends with '{secret_word[-1]}'."
+        )
         continue
 
     if guess == "quit":
@@ -21,7 +23,9 @@ while guess != secret_word:
     guess_count += 1
 
     if len(guess) != len(secret_word):
-        print("Sorry, the guess must have the same number of letters as the secret word.")
+        print(
+            "Sorry, the guess must have the same number of letters as the secret word."
+        )
         print()
         continue
 
