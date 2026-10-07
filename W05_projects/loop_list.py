@@ -8,6 +8,9 @@ while new_clients != "exit":
 
 print()
 print("Here is the list of clients you entered:")
-for clients in sorted(client):
-    print(f"--- {clients.title()}")
+
+for i in range(len(sorted(client))):
+    human_count = i + 1
+    print(f" {human_count} - {sorted(client)[i].title()}")
+
 print("Thank you for using the client list program!")
