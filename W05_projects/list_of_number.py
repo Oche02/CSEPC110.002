@@ -20,9 +20,15 @@ average = sum / len(numbers)
 print(f"The average is: {average}")
 
 # find the largest number in the list
-largest_number = max(numbers)
-print(f"The largest number is: {largest_number}")
+max = -1
+for number in numbers:
+    if number > max:
+        max = number
+print(f"The largest number is: {max}")
 
 # find the smallest positive number in the list
-smallest_positive = min(x for x in numbers if x > 0)
-print(f"The smallest positive number is: {smallest_positive}")
+min = 999999999999999999
+for number in numbers:
+    if number > 0 and number < min:
+        min = number
+print(f"The smallest positive number is: {min}")
