@@ -1,7 +1,7 @@
 records = []
 
 # open life-expectancy.csv file
-with open("W06_projects/life-expectancy.csv") as life_expectancy_file:
+with open("life-expectancy.csv") as life_expectancy_file:
     next(life_expectancy_file)  # skip the header
 
     # split data
