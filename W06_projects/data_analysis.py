@@ -1,3 +1,5 @@
+# i added the life expectancy gap between the highest and lowest countries for the selected year.
+
 records = []
 
 # open life-expectancy.csv file
@@ -49,20 +51,26 @@ if not filtered_rows:
     print("Invalid Input")
     year_interest = int(input("Enter the year of interest: "))
 else:
-    # average for that selected year
+    # average for the selected year
     average_life = sum(row["life_expectancy"] for row in filtered_rows) / len(
         filtered_rows
     )
 
-    # highest and lowest for that selected year
+    # highest and lowest for the selected year
     year_max = max(filtered_rows, key=lambda row: row["life_expectancy"])
     year_min = min(filtered_rows, key=lambda row: row["life_expectancy"])
 
     print(f"\nFor the year {year_interest}:")
     print(f"The average life expectancy across all countries was {average_life:.2f}")
+    # Show the average as a simple bar, with each # representing five years.
+    print(f"Average: {'#' * int(average_life // 5)} (each # = 5 years)")
     print(
         f"The max life expectancy was in {year_max['country']} with {year_max['life_expectancy']:.2f}"
     )
     print(
         f"The min life expectancy was in {year_min['country']} with {year_min['life_expectancy']:.3f}"
+    )
+    print(
+        f"The gap between the highest and lowest was "
+        f"{year_max['life_expectancy'] - year_min['life_expectancy']:.2f} years."
     )
