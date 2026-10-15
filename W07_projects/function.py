@@ -1,8 +1,20 @@
-def welcome(name):
-    """purpose: Display a welcome message"""
-    print(f"Hello {name}, Welcome to the function factory")
+def display_regular(message):
+    print(message)
 
 
-user = input("What is your name: ")
+def display_uppercase(message):
+    upper_message = message.upper()
+    print(upper_message)
 
-welcome(user)
+
+def display_lowercase(message):
+    lower_message = message.lower()
+    print(lower_message)
+
+
+# Main program
+user_message = input("What is your message? ")
+
+display_regular(user_message)
+display_uppercase(user_message)
+display_lowercase(user_message)
